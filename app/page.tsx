@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { portfolioSections } from "./site-sections";
 
 export default function Home() {
@@ -20,9 +21,13 @@ export default function Home() {
         </p>
         <div className="home-actions">
           <Link className="button button--primary" href="/project">
-            Explore projects <span aria-hidden="true">↗</span>
+            Explore projects
+            <ArrowUpRight className="button-icon" aria-hidden="true" />
           </Link>
-          <Link className="text-link" href="/about">A little about me <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href="/about">
+            A little about me
+            <ArrowRight className="text-link__icon" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
@@ -32,7 +37,7 @@ export default function Home() {
             <span className="index-number">{section.number}</span>
             <span className="index-title">{section.label}</span>
             <span className="index-detail">{section.detail}</span>
-            <span className="index-arrow" aria-hidden="true">↗</span>
+            <ArrowUpRight className="index-arrow" aria-hidden="true" />
           </Link>
         ))}
       </section>

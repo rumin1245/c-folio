@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { siteNavigationItems } from "./site-sections";
 
@@ -24,11 +25,11 @@ export default function SiteNavigation() {
         aria-controls="site-nav"
         onClick={() => setIsOpen((open) => !open)}
       >
-        <span className="menu-icon" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </span>
+        {isOpen ? (
+          <X className="menu-icon" aria-hidden="true" />
+        ) : (
+          <Menu className="menu-icon" aria-hidden="true" />
+        )}
       </button>
       <nav
         className={`site-nav${isOpen ? " is-open" : ""}`}
