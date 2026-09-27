@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { siteNavigationItems } from "./site-sections";
 
 export default function SiteNavigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const currentPath = pathname.replace(/\/+$/, "") || "/";
 
   function closeMenu() {
     setIsOpen(false);
@@ -32,11 +35,23 @@ export default function SiteNavigation() {
         id="site-nav"
         aria-label="Main navigation"
       >
-        {siteNavigationItems.map((item) => (
-          <Link href={item.href} key={item.href} onClick={closeMenu}>
-            {item.label}
-          </Link>
-        ))}
+        {siteNavigationItems.map((item) => {
+          const itemPath = item.href.replace(/\/+$/, "") || "/";
+          const isCurrentPage =
+            currentPath === itemPath ||
+            (itemPath !== "/" && currentPath.endsWith(itemPath));
+
+          return (
+            <Link
+              aria-current={isCurrentPage ? "page" : undefined}
+              href={item.href}
+              key={item.href}
+              onClick={closeMenu}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </nav>
     </div>
   );
