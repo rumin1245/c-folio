@@ -162,7 +162,7 @@ body {
   padding-top: 68px;
 }
 
-.home-hero {
+.home-container {
   border-bottom: 1px solid var(--line);
   padding: 24px 0 68px;
 }
@@ -272,7 +272,7 @@ body {
   max-width: 590px;
 }
 
-.hero-actions {
+.home-actions {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -770,7 +770,7 @@ body {
     font-size: 0.75rem;
   }
 
-  .hero-actions {
+  .home-actions {
     align-items: flex-start;
     flex-direction: column;
     gap: 20px;

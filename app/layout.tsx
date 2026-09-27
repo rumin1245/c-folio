@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "C.Z.M | Portfolio",
+  title: "Chua Zu Mei | Portfolio",
   description: "A portfolio of selected work, experience, and ideas.",
 };
 
@@ -33,7 +33,7 @@ export default function RootLayout({
           <div className="site-header__inner">
             <Link className="site-brand" href="/" aria-label="C.Z.M | Portfolio">
               <span className="site-brand__mark" aria-hidden="true">C.Z.M</span>
-              <span> | portfolio</span>
+              <span> | Portfolio</span>
             </Link>
             <div className="header-actions">
               <SiteNavigation />

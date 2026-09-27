@@ -3,22 +3,21 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="page-shell home-page">
-      <section className="home-hero">
+      <section className="home-container">
         <p className="eyebrow"><span className="eyebrow__dot" /> Welcome to my portfolio website!</p>
         <h1 className="display-title">
           Hey folks, I&apos;m
           <br />
           <span className="identity-rotator" aria-hidden="true">
             <span className="identity-rotator__item identity-rotator__name">Chua Zu Mei</span>
-            <span className="identity-rotator__item identity-rotator__role">Fullstack developer</span>
+            <span className="identity-rotator__item identity-rotator__role">Fullstack Developer</span>
           </span>
-          <span className="visually-hidden">Chua Zu Mei, Fullstack developer</span>
         </h1>
         <p className="home-intro">
           A growing collection of selected work, experience, and the thinking
           behind it.
         </p>
-        <div className="hero-actions">
+        <div className="home-actions">
           <Link className="button button--primary" href="/project">
             Explore projects <span aria-hidden="true">↗</span>
           </Link>
