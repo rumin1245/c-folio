@@ -1,8 +1,10 @@
+import { projectsSection } from "../site-sections";
+
 export default function Project() {
   return (
     <main className="page-shell subpage">
       <header className="page-heading">
-        <p className="eyebrow">02 / Selected work</p>
+        <p className="eyebrow">{projectsSection.number} / {projectsSection.label}</p>
         <h1 className="page-title">Projects, in progress and complete.</h1>
         <p className="page-lede">
           Share a small selection of work. Focus each entry on the problem,

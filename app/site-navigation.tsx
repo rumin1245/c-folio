@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { siteNavigationItems } from "./site-sections";
 
 export default function SiteNavigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,10 +32,11 @@ export default function SiteNavigation() {
         id="site-nav"
         aria-label="Main navigation"
       >
-        <Link href="/" onClick={closeMenu}>Home</Link>
-        <Link href="/about" onClick={closeMenu}>About</Link>
-        <Link href="/project" onClick={closeMenu}>Projects</Link>
-        <Link href="/cv" onClick={closeMenu}>CV</Link>
+        {siteNavigationItems.map((item) => (
+          <Link href={item.href} key={item.href} onClick={closeMenu}>
+            {item.label}
+          </Link>
+        ))}
       </nav>
     </div>
   );

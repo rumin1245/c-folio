@@ -1,8 +1,10 @@
+import { aboutSection } from "../site-sections";
+
 export default function About() {
   return (
     <main className="page-shell subpage">
       <header className="page-heading">
-        <p className="eyebrow">01 / About</p>
+        <p className="eyebrow">{aboutSection.number} / {aboutSection.label}</p>
         <h1 className="page-title">The person behind the work.</h1>
         <p className="page-lede">
           Use this space to introduce yourself, the things you care about, and

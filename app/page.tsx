@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { portfolioSections } from "./site-sections";
 
 export default function Home() {
   return (
@@ -26,24 +27,14 @@ export default function Home() {
       </section>
 
       <section className="home-index" aria-label="Portfolio sections">
-        <Link className="index-item" href="/about">
-          <span className="index-number">01</span>
-          <span className="index-title">About</span>
-          <span className="index-detail">Background & approach</span>
-          <span className="index-arrow" aria-hidden="true">↗</span>
-        </Link>
-        <Link className="index-item" href="/project">
-          <span className="index-number">02</span>
-          <span className="index-title">Projects</span>
-          <span className="index-detail">Selected work & process</span>
-          <span className="index-arrow" aria-hidden="true">↗</span>
-        </Link>
-        <Link className="index-item" href="/cv">
-          <span className="index-number">03</span>
-          <span className="index-title">CV</span>
-          <span className="index-detail">Experience & education</span>
-          <span className="index-arrow" aria-hidden="true">↗</span>
-        </Link>
+        {portfolioSections.map((section) => (
+          <Link className="index-item" href={section.href} key={section.href}>
+            <span className="index-number">{section.number}</span>
+            <span className="index-title">{section.label}</span>
+            <span className="index-detail">{section.detail}</span>
+            <span className="index-arrow" aria-hidden="true">↗</span>
+          </Link>
+        ))}
       </section>
     </main>
   );

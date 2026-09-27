@@ -1,8 +1,10 @@
+import { cvSection } from "../site-sections";
+
 export default function Cv() {
   return (
     <main className="page-shell subpage cv-page">
       <header className="page-heading cv-heading">
-        <p className="eyebrow">03 / CV</p>
+        <p className="eyebrow">{cvSection.number} / {cvSection.eyebrow}</p>
         <h1 className="page-title">Experience, at a glance.</h1>
         <p className="page-lede">
           A concise overview of your work, education, and the skills you bring.
